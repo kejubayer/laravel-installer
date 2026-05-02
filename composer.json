@@ -1,0 +1,22 @@
+{
+  "name": "kejubayer/laravel-installer",
+  "description": "Smart Laravel installer package with modern multi-step UI for cPanel deployment",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^10.0|^11.0|^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kejubayer\\Installer\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kejubayer\\Installer\\InstallerServiceProvider"
+      ]
+    }
+  }
+}

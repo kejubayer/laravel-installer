@@ -1,0 +1,19 @@
+<?php
+
+namespace Kejubayer\Installer\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class RedirectIfInstalled
+{
+    public function handle(Request $request, Closure $next): Response
+    {
+        if (file_exists(storage_path('installed'))) {
+            abort(404);
+        }
+
+        return $next($request);
+    }
+}
